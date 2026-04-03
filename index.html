@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>משה מנעולן רכב | שירות פרימיום ושחזור מפתחות</title>
     
-    <!-- Load Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Load Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Load Google Fonts (Rubik) -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Custom configuration for Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -76,29 +72,25 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Upgraded Image Placeholders */
-        .img-placeholder {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        /* Image Replace Styling */
+        .img-container {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            background-color: #f3f4f6;
             color: #6b7280;
             font-weight: 500;
-            padding: 1.5rem;
-            position: relative;
+            text-align: center;
             overflow: hidden;
+            position: relative;
         }
-        .img-placeholder::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%; width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
-            transform: skewX(-20deg);
-            animation: shine 3s infinite;
-        }
-        @keyframes shine {
-            100% { left: 200%; }
+        /* Make sure the image covers the area nicely */
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Subtle Background Pattern */
@@ -110,25 +102,20 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/972507499549?text=%D7%94%D7%99%D7%99%20%D7%9E%D7%A9%D7%94,%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A2%D7%96%D7%A8%D7%94%20%D7%A2%D7%9D%20%D7%94%D7%A8%D7%9B%D7%91" target="_blank" 
        class="fixed bottom-6 left-6 z-[100] bg-whatsapp text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl animate-pulse-glow hover:scale-110 transition-transform duration-300">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Sticky Navigation Bar (Glass effect) -->
     <nav class="glass fixed w-full z-50 top-0 transition-all duration-300 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
+                
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <div class="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center text-white shadow-md transform -rotate-3">
-                        <i class="fa-solid fa-car-side text-xl"></i>
-                    </div>
+                    <img src="logo.png" alt="משה מנעולן רכב" class="h-12 w-auto">
                     <span class="font-black text-2xl text-gray-900 tracking-tight">משה <span class="text-brand-600">מנעולן רכב</span></span>
                 </div>
                 
-                <!-- Desktop Contact Buttons -->
                 <div class="hidden md:flex items-center gap-4">
                     <a href="tel:0507499549" class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gray-900 px-6 py-2.5 font-bold text-white transition-all hover:bg-gray-800 shadow-md">
                         <span class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
@@ -137,7 +124,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile Phone Icon -->
                 <div class="md:hidden flex items-center gap-3">
                     <a href="tel:0507499549" class="bg-gray-900 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md">
                         <i class="fa-solid fa-phone text-lg"></i>
@@ -147,30 +133,23 @@
         </div>
     </nav>
 
-    <!-- Modern Hero Section -->
     <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-brand-950">
-        <!-- Abstract Background Shapes -->
         <div class="absolute top-0 right-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
             <div class="absolute top-40 -left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s;"></div>
         </div>
         
-        <!-- Hero Image Background Placeholder -->
-        <div class="absolute inset-0 z-0 opacity-20">
-            <div class="w-full h-full bg-cover bg-center border-none img-placeholder !bg-gray-900 !text-gray-500">
-                [המלצה: תמונת רקע כהה של רכב יוקרה או תקריב של סוויץ' / מפתח חכם]
-            </div>
+        <div class="absolute inset-0 z-0 opacity-20 img-container !bg-gray-900">
+             <img src="hero_bg.jpg" alt="רקע ראשי" class="opacity-50">
         </div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div class="lg:w-2/3">
-                <!-- Badge -->
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-blue-200 text-sm font-semibold mb-6 animate-fade-in-up backdrop-blur-md">
                     <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                     זמין כעת לחילוץ בבית שמש והסביבה
                 </div>
                 
-                <!-- Main Headline -->
                 <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 leading-[1.1] animate-fade-in-up" style="animation-delay: 0.1s;">
                     נתקעת בלי מפתח? <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-brand-500">אני בדרך אליך.</span>
@@ -180,7 +159,6 @@
                     שחזור מפתחות מאפס (All Keys Lost), פריצה ללא נזק ושכפול מפתחות חכמים עם הציוד המתקדם ביותר. <b>מגיעים עד אליך מיד.</b>
                 </p>
                 
-                <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style="animation-delay: 0.3s;">
                     <a href="tel:0507499549" class="group relative flex items-center justify-center gap-3 bg-white text-gray-900 text-xl font-bold px-8 py-4 rounded-full shadow-xl transition-all duration-300 hover:bg-gray-50 hover:shadow-brand-500/25">
                         <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors">
@@ -191,7 +169,6 @@
                 </div>
             </div>
 
-            <!-- Floating Trust Card (Desktop) -->
             <div class="hidden lg:block absolute left-8 top-1/2 -translate-y-1/2 w-80 glass-dark p-6 rounded-3xl animate-float shadow-2xl border-t border-l border-white/20">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-2xl shadow-lg">
@@ -217,7 +194,6 @@
         </div>
     </header>
 
-    <!-- Trust Banner -->
     <div class="bg-white border-b border-gray-100 py-6">
         <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center gap-6 text-gray-500 font-medium text-sm md:text-base">
             <div class="flex items-center gap-2"><i class="fa-solid fa-clock text-brand-500"></i> זמינות גבוהה</div>
@@ -230,7 +206,6 @@
         </div>
     </div>
 
-    <!-- Premium Services Section -->
     <section class="py-24 bg-pattern relative" id="services">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/90"></div>
         
@@ -243,52 +218,51 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Service 1: All Keys Lost -->
-                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden">
-                    <!-- Decorative gradient blob -->
+                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute -right-10 -top-10 w-40 h-40 bg-red-50 rounded-full blur-3xl group-hover:bg-red-100 transition-colors duration-500"></div>
                     
                     <div class="w-16 h-16 rounded-2xl bg-red-50 text-red-500 flex items-center justify-center text-2xl mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-key"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3 relative z-10">שחזור מאובדן מוחלט</h3>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
+                    <p class="text-gray-600 leading-relaxed relative z-10 mb-6 flex-grow">
                         (All Keys Lost). מחיקת המפתחות האבודים ממחשב הרכב וקידוד מפתח חדש מאפס בצורה בטוחה. ללא צורך בגרירה ליבואן.
                     </p>
-                    <div class="mt-6 rounded-xl overflow-hidden h-32 img-placeholder shadow-inner relative z-10">
-                        [תמונה: חיבור סורק למחשב הרכב OBD]
+                    
+                    <div class="rounded-xl overflow-hidden h-40 img-container shadow-inner relative z-10 mt-auto">
+                        <img src="image_8c2669.png" alt="שחזור מפתחות">
                     </div>
                 </div>
 
-                <!-- Service 2: Key Duplication -->
-                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-50 rounded-full blur-3xl group-hover:bg-brand-100 transition-colors duration-500"></div>
                     
                     <div class="w-16 h-16 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-clone"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3 relative z-10">שכפול מפתחות ושלטים</h3>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
+                    <p class="text-gray-600 leading-relaxed relative z-10 mb-6 flex-grow">
                         שכפול מדויק של מפתחות חכמים (Smart Keys), שלטי נוחות, וקידוד אימובילייזר מקורי כמעט לכל דגמי הרכבים בישראל.
                     </p>
-                    <div class="mt-6 rounded-xl overflow-hidden h-32 img-placeholder shadow-inner relative z-10">
-                        [תמונה: קולקציית שלטים חכמים לרכב]
+                    
+                    <div class="rounded-xl overflow-hidden h-40 img-container shadow-inner relative z-10 mt-auto">
+                        <img src="image_8badca.jpg" alt="שכפול מפתחות חכמים">
                     </div>
                 </div>
 
-                <!-- Service 3: Unlocking -->
-                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                <div class="group bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 relative overflow-hidden flex flex-col h-full">
                     <div class="absolute -right-10 -top-10 w-40 h-40 bg-green-50 rounded-full blur-3xl group-hover:bg-green-100 transition-colors duration-500"></div>
                     
                     <div class="w-16 h-16 rounded-2xl bg-green-50 text-green-600 flex items-center justify-center text-2xl mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
                         <i class="fa-solid fa-unlock-keyhole"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-3 relative z-10">פריצה ללא נזק</h3>
-                    <p class="text-gray-600 leading-relaxed relative z-10">
+                    <p class="text-gray-600 leading-relaxed relative z-10 mb-6 flex-grow">
                         המפתח ננעל בפנים? טכניקות פריצה "נקיות" (דגדוג מנעולים או ניפוח עדין) המבטיחות 0 נזק לדלת, מנגנון הנעילה או הצבע.
                     </p>
-                    <div class="mt-6 rounded-xl overflow-hidden h-32 img-placeholder shadow-inner relative z-10">
-                        [תמונה: פריצה עדינה של דלת רכב]
+                    
+                    <div class="rounded-xl overflow-hidden h-40 img-container shadow-inner relative z-10 mt-auto">
+                        <img src="image_8c2680.png" alt="פריצת רכבים">
                     </div>
                 </div>
 
@@ -296,9 +270,7 @@
         </div>
     </section>
 
-    <!-- Interactive/Modern 'Why Us' Section -->
     <section class="py-24 bg-gray-900 text-white relative overflow-hidden">
-        <!-- Decoration -->
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -334,23 +306,19 @@
                 </div>
                 
                 <div class="lg:w-1/2 w-full relative">
-                    <!-- Image container with glowing effect -->
-                    <div class="relative z-10 rounded-[2rem] overflow-hidden border border-gray-700 shadow-2xl">
-                        <div class="aspect-square md:aspect-[4/3] img-placeholder !bg-gray-800 !text-gray-400">
-                            [תמונת פורטרט מקצועית של משה מחזיק שלט חכם ליד ניידת השירות]
+                    <div class="relative z-10 rounded-[2rem] overflow-hidden border border-gray-700 shadow-2xl h-[400px]">
+                        <div class="img-container !bg-gray-800">
+                            <img src="why_us_img.jpg" alt="שירות מקצועי">
                         </div>
                     </div>
-                    <!-- Glow behind image -->
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-600/20 filter blur-[100px] z-0 rounded-full"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bottom Call to Action (Gradient Card) -->
     <section class="py-20 px-4">
         <div class="max-w-5xl mx-auto bg-gradient-to-br from-brand-600 to-brand-900 rounded-[3rem] p-10 md:p-16 text-center text-white shadow-2xl relative overflow-hidden">
-            <!-- decorative circles -->
             <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full filter blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             <div class="absolute bottom-0 left-0 w-64 h-64 bg-black/20 rounded-full filter blur-3xl translate-y-1/2 -translate-x-1/2"></div>
             
@@ -370,7 +338,6 @@
         </div>
     </section>
 
-    <!-- Clean Footer -->
     <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
             
